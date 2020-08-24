@@ -29,13 +29,14 @@ export default function SignUp() {
 
     const handleChange = (e) => {
         setSignup({
-            ...login,
+            ...signup,
             [e.target.name]: e.target.value
         })
     }
 
     return (
         <div>
+            <h2>Sign Up for Potluck Planner</h2>
             <form onSubmit={handleSubmit}>
                 <input 
                     name='email'

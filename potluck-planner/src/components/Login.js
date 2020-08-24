@@ -36,6 +36,7 @@ export default function Login() {
 
     return (
         <div>
+            <h2>Login to Your Account</h2>
             <form onSubmit={handleSubmit}>
                 <input 
                     name='email'
