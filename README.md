@@ -38,4 +38,7 @@ In the world of social gatherings and potlucks the "Potluck Planner" is king. Th
 
 5. As a `guest` I'd like to be able to select which `item`s I'd like to be responsible for bringing
 
+
+Enjoy!
+
 ## 
