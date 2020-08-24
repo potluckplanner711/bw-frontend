@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-const links = ["Home", "Add A Potluck", "Login", "Register"];
 export default function Header() {
     return (
         <div>
@@ -21,6 +20,7 @@ export default function Header() {
           <Link 
             className="mr-6 font-bold text-gray-500 hover:text-white text-base md:text-lg lg:text-xl"
             to ='/signup'>Sign Up</Link>
+
       </div>
         </div>
       </header>
