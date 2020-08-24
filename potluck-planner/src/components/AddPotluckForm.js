@@ -32,7 +32,7 @@ function AddPotluckForm() {
         setPotluck(initPotluck)
     }
 
-    const handleSubmit = (e) => {
+    const handleChange = (e) => {
         e.persist()
         setPotluck({
             ...potluck,
