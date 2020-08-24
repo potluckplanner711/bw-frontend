@@ -6,15 +6,15 @@ export default function Login() {
 
     const history = useHistory()
 
-    const credentials = {
+    const loginCredentials = {
         email: '',
         password: ''
     }
-    const [login, setLogin] = useState(credentials)
+    const [login, setLogin] = useState(loginCredentials)
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axiosWithAuth().post('apiurl', credentials)
+        axiosWithAuth().post('apiurl', login)
         // need to update api url to reflect backend address
             .then(res => {
                 console.log(res)
@@ -39,7 +39,7 @@ export default function Login() {
             <form onSubmit={handleSubmit}>
                 <input 
                     name='email'
-                    value={credentials.email}
+                    value={login.email}
                     type='text'
                     placeholder='Email'
                     onChange={handleChange}
@@ -47,7 +47,7 @@ export default function Login() {
                 <br />
                 <input 
                     name='password'
-                    value={credentials.password}
+                    value={login.password}
                     type='password'
                     placeholder='Password'
                     onChange={handleChange}
