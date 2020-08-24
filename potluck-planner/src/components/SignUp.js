@@ -22,7 +22,7 @@ export default function SignUp() {
                 console.log(res)
                 localStorage.setItem('token', res.data)
                 // may need to change location of token from res
-                history.pushState('/')
+                history.push('/')
             })
             .catch(err => {
                 console.log(err)

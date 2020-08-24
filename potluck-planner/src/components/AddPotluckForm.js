@@ -25,6 +25,7 @@ function AddPotluckForm() {
         axiosWithAuth().post('endpoint', potluck)
             .then(res => {
                 console.log(res)
+                history.push('/')
             })
             .catch(err => {
                 console.log(err)
