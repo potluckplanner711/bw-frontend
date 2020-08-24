@@ -1,6 +1,8 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 //Imported Components
+import { PrivateRoute } from './components/PrivateRoute'
 import Landing from './components/Landing';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
@@ -13,14 +15,16 @@ import Dashboard from './components/Dashboard';
 
 function App() {
   return ( 
+    <Router>
       <div className="App">
-        <header className="App-header">
-          <Landing />
-        </header>
-        <Login />
-        <SignUp />
-        <Dashboard/>
+        <Route exact path='/' component={Landing} />
+        <Route exact path='/login' component={Login} />
+        <Route exact path='/signup' component={SignUp} />
+        <PrivateRoute path='/dashboard'>
+          <Dashboard/>
+        </PrivateRoute>
       </div>
+    </Router>
   );
 }
 
