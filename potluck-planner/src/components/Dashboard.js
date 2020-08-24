@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { useHistory } from 'react-router-dom'
 //Imported Components
 import PotluckList from './PotluckDetail';
 import PotluckDetail from './PotluckDetail';
@@ -9,8 +9,35 @@ import AddPotluckForm from './AddPotluckForm';
 
 
 export default function Dashboard() {
+    const history = useHistory();
+    
     return (
         <div>
+            <h2>Dashboard</h2>
+                <section>
+                    <div>
+                    <h3>Your Potlucks</h3>
+                        <p>
+                            Here is where you'll find a list of potlucks that youre organizing or attending
+                        </p>
+                        <button 
+                            onClick={() => history.push("/courses")}
+                        >
+                            View My Potlucks
+                        </button>
+                    </div>
+                    <div>
+                    <h3>Potluck Invitations</h3>
+                        <p>
+                            Here is where you'll find a list of potlucks that you were invited to.
+                        </p>
+                        <button 
+                            onClick={() => history.push("/courses")}
+                        >
+                            View My RSVPs
+                        </button>
+                    </div>
+                </section>
         Dashboard - page user comes to upon sign in. 
 
         Protected Route - user cannot see unless they are authenticated.

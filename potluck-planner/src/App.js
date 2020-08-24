@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 //Imported Components
 import { PrivateRoute } from './components/PrivateRoute'
+import Navbar from './components/Navbar'
 import Landing from './components/Landing';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
@@ -17,12 +18,15 @@ function App() {
   return ( 
     <Router>
       <div className="App">
+      <div className="bg-gray-300">
+        <Navbar />
         <Route exact path='/' component={Landing} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={SignUp} />
         <PrivateRoute path='/dashboard'>
           <Dashboard/>
         </PrivateRoute>
+      </div>
       </div>
     </Router>
   );

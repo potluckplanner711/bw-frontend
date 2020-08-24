@@ -6,8 +6,7 @@ import landinghero from '../img/landinghero.jpg';
 
 function Landing() {
   return (
-    <div className="bg-gray-300">
-      <Navbar />
+
       <div className="bg-gray-100 flex">
         <div className="px-8 py-12 max-w-md mx-auto sm:max-w-xl lg:w-1/2 lg:max-w-full lg:py-24 lg:px-12">        
         <div className="xl:max-w-lg xl:ml-auto">
@@ -29,7 +28,6 @@ function Landing() {
         <img className="absolute inset-0 h-full w-full object-cover object-center" src={landinghero} alt="potluck" />
         </div>
       </div>
-    </div>
   );
 }
 
