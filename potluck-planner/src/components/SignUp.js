@@ -7,6 +7,8 @@ export default function SignUp() {
     const history = useHistory()
 
     const signupCredentials = {
+        fname: '',
+        lname: '',
         email: '',
         password: ''
     }
@@ -38,6 +40,22 @@ export default function SignUp() {
         <div>
             <h2>Sign Up for Potluck Planner</h2>
             <form onSubmit={handleSubmit}>
+            <input 
+                    name='fname'
+                    value={signup.fname}
+                    type='text'
+                    placeholder='First Name'
+                    onChange={handleChange}
+                />
+                <br />
+                <input 
+                    name='lname'
+                    value={signup.lname}
+                    type='text'
+                    placeholder='Last Name'
+                    onChange={handleChange}
+                />
+                <br />
                 <input 
                     name='email'
                     value={signup.email}
