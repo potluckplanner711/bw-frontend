@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { axiosWithAuth } from './utils/axiosWithAuth'
+import loginpic from '../img/login-pic.jpg'
 
 export default function Login() {
 
@@ -35,9 +36,9 @@ export default function Login() {
     }
 
     return (
-        <div>
+        <div className="flex">
             <form 
-                className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+                className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-6/12 "
                 onSubmit={handleSubmit}>
 
                 <div className="mb-4">
@@ -45,7 +46,7 @@ export default function Login() {
                         Email
                     </label>
                     <input 
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="shadow appearance-none border rounded w-4/12 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         name='email'
                         value={login.email}
                         type='text'
@@ -59,7 +60,7 @@ export default function Login() {
                         Password
                     </label>
                     <input 
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="shadow appearance-none border rounded w-4/12 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         name='password'
                         value={login.password}
                         type='password'
@@ -68,8 +69,11 @@ export default function Login() {
                     />
                 </div>
 
-                <button className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded'>Login</button>
+                <button className='bg-transparent hover:bg-orange text-aqua font-semibold hover:text-white py-2 px-4 border border-aqua hover:border-transparent rounded'>Login</button>
             </form>
+            <div className="w-6/12" >
+                <img src={loginpic} alt="food-table" className="rounded" />
+            </div>
         </div>
     )
 }
