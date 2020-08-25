@@ -46,7 +46,7 @@ function AddPotluckForm() {
             <form onSubmit={handleSubmit}>
                 <input 
                     name='potluckTitle'
-                    value={initPotluck.potluckTitle}
+                    value={potluck.potluckTitle}
                     type='text'
                     placeholder='Potluck Name'
                     onChange={handleChange}
@@ -54,7 +54,7 @@ function AddPotluckForm() {
                 <br />
                 <input 
                     name='potluckDate'
-                    value={initPotluck.potluckDate}
+                    value={potluck.potluckDate}
                     type='text'
                     placeholder='Potluck Date'
                     onChange={handleChange}
@@ -62,7 +62,7 @@ function AddPotluckForm() {
                 <br />
                 <input 
                     name='potluckAddress'
-                    value={initPotluck.potluckAddress}
+                    value={potluck.potluckAddress}
                     type='text'
                     placeholder='Potluck Address'
                     onChange={handleChange}
@@ -70,7 +70,7 @@ function AddPotluckForm() {
                 <br />
                 <input 
                     name='potluckCity'
-                    value={initPotluck.potluckCity}
+                    value={potluck.potluckCity}
                     type='text'
                     placeholder='Potluck City'
                     onChange={handleChange}
@@ -78,7 +78,7 @@ function AddPotluckForm() {
                 <br />
                 <input 
                     name='potluckSt'
-                    value={initPotluck.potluckSt}
+                    value={potluck.potluckSt}
                     type='text'
                     placeholder='Potluck State'
                     onChange={handleChange}
@@ -86,7 +86,8 @@ function AddPotluckForm() {
                 <br />
                 <input 
                     name='potluckZip'
-                    value={initPotluck.potluckZip}
+                    // pattern='[0-9]*'
+                    value={potluck.potluckZip}
                     type='text'
                     placeholder='Potluck Zip Code'
                     onChange={handleChange}
