@@ -1,4 +1,4 @@
-// import { SUCCSS, FAIL, LOADING} from '../actions'
+// import { SUCCESS, FAIL, LOADING} from '../actions'
 
 const initialState = {
     potlucks: [],

@@ -1,26 +1,36 @@
 import React from 'react'
-import RSVP from './RSVP';
 
-export default function PotluckDetail() {
+
+
+export default function PotluckDetail(props) {
+    const { potluck } = props
+
+    // const foodToggle = (e) => {
+    //     if(potluck.items) {
+    //         return {...item, !item.taken}
+    //     } else {
+    //         return
+    //     }
+    // }
+
     return (
         <div>
-            Event Data:
-            - Headline - edit functionality??
-            - Date
-            - Time
-            - Location
-            - Event creator
-            - RSVP Buttons (Yes, No)
-            - RSVP Component 
-                - RSVP
-                    -[users who are coming]
-                    -Button to RSVP to event
-                    -Food List - add/check/delete
-                    -Form input to enter in new items
-                    -List of items
-                    -Ability to check item and have it assigned based on currently logged in user id
-            <br />**Nested within this is RSVP
-            <RSVP />
+            <div>
+                <p>{potluck.potluckTitle}:</p>
+                <p>{potluck.potluckDate}</p>
+                <p>{potluck.potluckAddress}</p>
+                <p>{potluck.potluckCity}</p>
+                <p>{potluck.potluckSt}</p>
+                <p>{potluck.potluckZip}</p>
+            </div>
+            <div>
+                <h3>{potluck.attendees.map(person => {
+                    return `${person.firstName} ${person.lastName}, `
+                })}</h3>
+            </div>
+            <div>
+                {/* Todo list? */}
+            </div>
         </div>
     )
 }

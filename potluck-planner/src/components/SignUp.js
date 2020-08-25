@@ -10,6 +10,7 @@ export default function SignUp() {
         fname: '',
         lname: '',
         email: '',
+        username: '',
         password: ''
     }
     const [signup, setSignup] = useState(signupCredentials)
@@ -73,6 +74,17 @@ export default function SignUp() {
                     value={signup.email}
                     type='text'
                     placeholder='Email'
+                    onChange={handleChange}
+                />
+            </label>
+            <label className="block text-gray-700 text-sm font-bold mb-2">
+            Username
+                <input 
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    name='username'
+                    value={signup.username}
+                    type='text'
+                    placeholder='Username'
                     onChange={handleChange}
                 />
             </label>
