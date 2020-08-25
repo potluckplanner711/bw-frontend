@@ -2,7 +2,7 @@ import React from 'react';
 
 
 import landinghero from '../img/landinghero.jpg';
-
+    
 function Landing() {
   return (
 
