@@ -39,14 +39,14 @@ export default function SignUp() {
     return (
         <div>
             <form 
-                class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+                className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
                 onSubmit={handleSubmit}>
 
-            <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2">
+            <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2">
             First Name
                 <input 
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     name='fname'
                     value={signup.fname}
                     type='text'
@@ -54,10 +54,10 @@ export default function SignUp() {
                     onChange={handleChange}
                 />
             </label>
-            <label class="block text-gray-700 text-sm font-bold mb-2">
+            <label className="block text-gray-700 text-sm font-bold mb-2">
             Last Name
                 <input 
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     name='lname'
                     value={signup.lname}
                     type='text'
@@ -65,10 +65,10 @@ export default function SignUp() {
                     onChange={handleChange}
                 />
             </label>
-            <label class="block text-gray-700 text-sm font-bold mb-2">
+            <label className="block text-gray-700 text-sm font-bold mb-2">
             Email
                 <input 
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     name='email'
                     value={signup.email}
                     type='text'
@@ -76,10 +76,10 @@ export default function SignUp() {
                     onChange={handleChange}
                 />
             </label>
-            <label class="block text-gray-700 text-sm font-bold mb-2">
+            <label className="block text-gray-700 text-sm font-bold mb-2">
             Password
                 <input 
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     name='password'
                     value={signup.password}
                     type='password'
@@ -88,7 +88,7 @@ export default function SignUp() {
                 />
             </label>
             </div>
-                <button class='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded'>Sign Up</button>
+                <button className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded'>Sign Up</button>
             </form>
         </div>
     )
