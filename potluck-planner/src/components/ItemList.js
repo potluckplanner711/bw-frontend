@@ -3,7 +3,9 @@ import React from 'react'
 export default function ItemList() {
   return (
     <div>
-      
-    </div>
+      <p>{itemTitle}</p>
+      <p>{ taken} </p>
+      <button>Delete</button>
+   </div>
   )
 }
