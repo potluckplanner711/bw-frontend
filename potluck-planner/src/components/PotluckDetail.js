@@ -4,19 +4,12 @@ import React from 'react'
 
 export default function PotluckDetail(props) {
     const { potluck } = props
-
-    // const foodToggle = (e) => {
-    //     if(potluck.items) {
-    //         return {...item, !item.taken}
-    //     } else {
-    //         return
-    //     }
-    // }
+    
 
     return (
         <div>
-            <div>
-                <p>{potluck.potluckTitle}:</p>
+            <div className="container bg-gray-300">
+                <h2 className="text-lg font-bold">{potluck.potluckTitle}:</h2>
                 <p>{potluck.potluckDate}</p>
                 <p>{potluck.potluckAddress}</p>
                 <p>{potluck.potluckCity}</p>
