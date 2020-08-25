@@ -36,9 +36,9 @@ export default function Login() {
     }
 
     return (
-        <div className="flex">
+        <div className="flex-col sm:flex-row h-full">
             <form 
-                className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-6/12 "
+                className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4  "
                 onSubmit={handleSubmit}>
 
                 <div className="mb-4">
@@ -46,7 +46,7 @@ export default function Login() {
                         Email
                     </label>
                     <input 
-                        className="shadow appearance-none border rounded w-4/12 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         name='email'
                         value={login.email}
                         type='text'
@@ -60,7 +60,7 @@ export default function Login() {
                         Password
                     </label>
                     <input 
-                        className="shadow appearance-none border rounded w-4/12 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         name='password'
                         value={login.password}
                         type='password'
