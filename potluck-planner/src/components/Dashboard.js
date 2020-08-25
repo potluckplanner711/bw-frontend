@@ -2,12 +2,8 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Link  } from 'react-router-dom'
 
 //Imported Components
-import PotluckList from './PotluckDetail';
-import PotluckDetail from './PotluckDetail';
+import PotluckList from './PotluckList';
 import AddPotluckForm from './AddPotluckForm';
-
-
-
 
 export default function Dashboard() {
     

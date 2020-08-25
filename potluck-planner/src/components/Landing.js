@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Navbar from './Navbar';
 
 import landinghero from '../img/landinghero.jpg';
 
