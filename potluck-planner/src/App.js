@@ -8,6 +8,7 @@ import Landing from './components/Landing';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Dashboard from './components/Dashboard';
+import PotluckDetail from './components/PotluckDetail';
 
 //Redux Imports
 // import { Provider } from 'react-redux';
@@ -26,6 +27,7 @@ function App() {
         <PrivateRoute path='/dashboard'>
           <Dashboard/>
         </PrivateRoute>
+        <Route exact path='potlucks/:id' component={PotluckDetail} />
       </div>
       </div>
     </Router>

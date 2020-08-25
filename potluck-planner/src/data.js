@@ -1,9 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import PotluckCard from './PotluckCard';
-
-
-const initialPotluckList =
-[
+export default[
     {
         potluckId: 2,
         potluckTitle: "Kickass Potluck",
@@ -229,35 +224,3 @@ const initialPotluckList =
         ]
     },
 ]
-
-const fakeAxiosGet = () => {
-    return Promise.resolve({ status: 200, success: true, data: initialPotluckList })
-  }
-
-export default function PotluckList() {
-    const [potlucks, setPotlucks ] = useState([])
-
-    useEffect(() => {
-        fakeAxiosGet('fakeapi.com').then(res => setPotlucks(res.data))
-      }, [])
-
-
-    return (
-        <div>
-            <header><h1>My Potlucks</h1></header>
-            <div>
-                {
-                potlucks.map(potluck => {
-                    return (
-                        <PotluckCard potluck={potluck}/>
-                    )
-                })
-                }
-            </div>
-        </div>
-    )
-}
-
-
-// get redux setup
-// set data user, get it
