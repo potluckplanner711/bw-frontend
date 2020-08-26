@@ -8,7 +8,7 @@ import Landing from './components/Landing';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Dashboard from './components/Dashboard';
-import PotluckDetail from './components/PotluckDetail';
+
 
 //Redux Imports
 // import { Provider } from 'react-redux';
@@ -24,10 +24,9 @@ function App() {
         <Route exact path='/' component={Landing} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={SignUp} />
-        <PrivateRoute path='/dashboard'>
+        <PrivateRoute exact path='/dashboard'>
           <Dashboard/>
         </PrivateRoute>
-        <Route exact path='potlucks/:id' component={PotluckDetail} />
       </div>
       </div>
     </Router>
@@ -35,5 +34,3 @@ function App() {
 }
 
 export default App;
-{/**  <Provider> Dont forget this when you're ready for the store: store={store}**/}
-   {/**  </Provider> **/}
