@@ -1,9 +1,11 @@
 import React from 'react';
-
+import data from '../data';
 
 import landinghero from '../img/landinghero.jpg';
     
 function Landing() {
+  console.log(data)
+
   return (
 
       <div className="bg-gray-100 flex">
