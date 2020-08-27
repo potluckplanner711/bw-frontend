@@ -1,91 +1,47 @@
-import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
-import { axiosWithAuth } from '../../utils/axiosTypes'
+import React, { useState } from 'react';
+import { signUpAction } from '../../actions';
+import { useStateValue } from '../../hooks/useStateValue';
 
 export default function SignUp() {
-
-    const history = useHistory()
-
-    const signupCredentials = {
-        fname: '',
-        lname: '',
-        email: '',
+    const [user, setUser] = useState({
         username: '',
-        password: ''
-    }
-    const [signup, setSignup] = useState(signupCredentials)
+        password: '',
+        full_name: '',
+        email: '',
+    });
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        axiosWithAuth().post('apiurl', signup)
-        // need to update api url to reflect backend address
-            .then(res => {
-                console.log(res)
-                localStorage.setItem('token', res.data)
-                // may need to change location of token from res
-                history.push('/')
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }
+    const [{ signUp }, dispatch] = useStateValue();
 
-    const handleChange = (e) => {
-        setSignup({
-            ...signup,
-            [e.target.name]: e.target.value
-        })
-    }
+    const userInputHandler = event => {
+        const name = event.target.name;
+        const value = event.target.value;
+        setUser({ ...user, [name]: value });
+    };
 
     return (
         <div>
             <form 
                 className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
-                onSubmit={handleSubmit}>
-
+                onSubmit={e => {
+                    e.preventDefault();
+                    signUpAction(dispatch, user);
+                    setUser({
+                        username: '',
+                        password: '',
+                        full_name: '',
+                        email: '',
+                    });
+                }}>
             <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-            First Name
-                <input 
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    name='fname'
-                    value={signup.fname}
-                    type='text'
-                    placeholder='First Name'
-                    onChange={handleChange}
-                />
-            </label>
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-            Last Name
-                <input 
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    name='lname'
-                    value={signup.lname}
-                    type='text'
-                    placeholder='Last Name'
-                    onChange={handleChange}
-                />
-            </label>
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-            Email
-                <input 
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    name='email'
-                    value={signup.email}
-                    type='text'
-                    placeholder='Email'
-                    onChange={handleChange}
-                />
-            </label>
             <label className="block text-gray-700 text-sm font-bold mb-2">
             Username
                 <input 
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     name='username'
-                    value={signup.username}
+                    value={user.username}
                     type='text'
-                    placeholder='Username'
-                    onChange={handleChange}
+                    placeholder='Create A Username'
+                    onChange={event => userInputHandler(event)}
                 />
             </label>
             <label className="block text-gray-700 text-sm font-bold mb-2">
@@ -93,14 +49,37 @@ export default function SignUp() {
                 <input 
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     name='password'
-                    value={signup.password}
                     type='password'
-                    placeholder='Password'
-                    onChange={handleChange}
+                    onChange={event => userInputHandler(event)}
+                    value={user.password}
+                    placeholder='Create A Password'
+                />
+            </label>
+            <label className="block text-gray-700 text-sm font-bold mb-2">
+            Full Name
+                <input 
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    name='full_name'
+                    type='text'
+                    onChange={event => userInputHandler(event)}
+                    value={user.full_name}
+                    placeholder='Enter Full Name'
+                />
+            </label>
+            <label className="block text-gray-700 text-sm font-bold mb-2">
+            Email
+                <input 
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    name='email'
+                    type='email'
+                    onChange={event => userInputHandler(event)}
+                    value={user.email}
+                    placeholder='Enter your email'
                 />
             </label>
             </div>
-                <button className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded'>Sign Up</button>
+                <button className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded'
+                disabled={signUp.isSignUpLoading} type='submit'>>Sign Up</button>
             </form>
         </div>
     )
