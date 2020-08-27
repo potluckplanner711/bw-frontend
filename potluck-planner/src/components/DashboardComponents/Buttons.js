@@ -15,11 +15,6 @@ export const HostButtons = ({ event, dispatch }) => {
       }}
       alt="Delete"
     >
-      <Popup
-        content="Delete Event"
-        trigger={<i className="trash alternate icon" />}
-        size="large"
-      />
     </button>
   );
 };
@@ -70,11 +65,6 @@ export const UnconfirmedGuestButtons = ({ event_id, user_id, dispatch }) => {
         }}
         alt="Accept"
       >
-        <Popup
-          content="Accept"
-          trigger={<i className="check icon" />}
-          size="large"
-        />
       </button>
 
       <button
@@ -85,11 +75,6 @@ export const UnconfirmedGuestButtons = ({ event_id, user_id, dispatch }) => {
         }}
         alt="Decline"
       >
-        <Popup
-          content="Decline"
-          trigger={<i className="close icon" />}
-          size="large"
-        />
       </button>
     </div>
   );
