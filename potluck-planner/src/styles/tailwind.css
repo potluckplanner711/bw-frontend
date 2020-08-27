@@ -6,7 +6,6 @@
 .btn:focus {
     @apply outline-none shadow-outline;
 }
-
 .btn-blue {
     @apply bg-blue-500 text-white;
 }
