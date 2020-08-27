@@ -27,22 +27,22 @@ const PotluckDetail= ({ event, match, organizers }) => {
     const eventTime = moment(time, 'HH:mm:ss a').format('LT');
 
     return (
-        <div>
+        <div className="bg-apricot w-56 h-48 text-center px-4">
             <NavLink to={`${url}/event/${event_id}`}>
                 <h2 className="text-2xl font-extrabold">{event_name}</h2>
             </NavLink>
             <div className='text-center'>
                     <div className=''>
-                        <span className='card-field'>Organizer: </span>
+                        <span className=''>Organizer: </span>
                         {eventOrganizer && eventOrganizer.full_name}
                     </div>
-                    <div className='card-location'>
+                    <div className=''>
                         {city}, {state}
                     </div>
-                    <div className='card-date'>
+                    <div className=''>
                         {moment(date).format('LL')}
                     </div>
-                    <div className='card-time'>
+                    <div className=''>
                         {eventTime}
                     </div>
             </div>
