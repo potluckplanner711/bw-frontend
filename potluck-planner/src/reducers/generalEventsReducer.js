@@ -11,7 +11,6 @@ import {
     UPDATING_EVENT,
     UPDATED_EVENT,
     UPDATING_EVENT_ERROR,
-    UPDATE_SEARCH,
 } from '../actions';
 
 /*
@@ -91,11 +90,6 @@ export const eventsReducer = (state, { type, payload }) => {
                 ...state,
                 isEventsLoading: false,
                 data: [...sameEvents, payload.event],
-            };
-        case UPDATE_SEARCH:
-            return {
-                ...state,
-                searchTerm: payload,
             };
         default:
             return state;
