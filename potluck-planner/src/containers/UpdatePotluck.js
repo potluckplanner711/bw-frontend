@@ -35,8 +35,7 @@ const UpdatePotluck = props => {
     
     return (
         <div>
-            <form
-                style={{ width: '550px', margin: '0px' }}
+            <form className="flex flex-col items-center"
                 onSubmit={e => {
                     e.preventDefault();
                     updateEvent(dispatch, eventID, {
@@ -60,8 +59,8 @@ const UpdatePotluck = props => {
                     });
                     props.history.push(`/dashboard/event/${eventID}`);
                 }}>
-                <legend>Update Event</legend>
-                <input
+                <legend className="text-4xl text-center font-extrabold" >Update Event</legend>
+                <input className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg px-4 py-4 my-3 block w-4/5 appearance-none leading-normal"
                     required
                     name='event_name'
                     type='text'
@@ -69,30 +68,29 @@ const UpdatePotluck = props => {
                     onChange={event => eventInputHandler(event)}
                     placeholder='Event Name'
                 />
+                <h4>Date and Time:</h4>
+                <div className="flex space-x-6">
+                    <input
+                        className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg px-4 py-4 my-3 block .w-3/4 appearance-none leading-normal"
+                        required
+                        name='date'
+                        type='date'
+                        min={today}
+                        value={editEvent.date}
+                        onChange={event => eventInputHandler(event)}
+                    />
+                    <input
+                        className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg px-4 py-4 my-3 block .w-3/4 appearance-none leading-normal"
+                        required
+                        name='time'
+                        type='time'
+                        value={editEvent.time}
+                        onChange={event => eventInputHandler(event)}
+                    />
+                </div>
+                <h4>Location:</h4>
                 <input
-                    required
-                    name='date'
-                    type='date'
-                    min={today}
-                    value={editEvent.date}
-                    onChange={event => eventInputHandler(event)}
-                />
-                <input
-                    required
-                    name='time'
-                    type='time'
-                    value={editEvent.time}
-                    onChange={event => eventInputHandler(event)}
-                />
-                <input
-                    required
-                    name='description'
-                    type='text'
-                    value={editEvent.description}
-                    onChange={event => eventInputHandler(event)}
-                    placeholder='Description'
-                />
-                <input
+                    className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg px-4 py-4 my-3 block w-4/5 appearance-none leading-normal"
                     required
                     name='address'
                     type='text'
@@ -101,6 +99,7 @@ const UpdatePotluck = props => {
                     placeholder='Street Address'
                 />
                 <input
+                    className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg px-4 py-4 my-3 block w-4/5 appearance-none leading-normal"
                     required
                     name='city'
                     type='text'
@@ -109,6 +108,7 @@ const UpdatePotluck = props => {
                     placeholder='City'
                 />
                 <input
+                    className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg px-4 py-4 my-3 block w-4/5 appearance-none leading-normal"
                     required
                     name='state'
                     type='text'
@@ -116,7 +116,17 @@ const UpdatePotluck = props => {
                     onChange={event => eventInputHandler(event)}
                     placeholder='State'
                 />
-                <button type='submit'>Submit</button>
+                <input
+                    className="bg-white focus:outline-none focus:shadow-outline focus:apricot border border-gray-300 rounded-lg px-4 py-10 my-3 block w-4/5 appearance-none leading-normal"
+                    required
+                    name='description'
+                    type='text'
+                    value={editEvent.description}
+                    onChange={event => eventInputHandler(event)}
+                    placeholder='Description'
+                />
+                <button className="bg-white text-xl focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg px-4 py-4 my-3 block w-4/5 appearance-none leading-normal hover:bg-apricot"
+                    type='submit'>Submit</button>
             </form>
         </div>
     );

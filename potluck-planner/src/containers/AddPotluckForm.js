@@ -42,7 +42,7 @@ const AddPotluckForm = props => {
         props.history.push("/dashboard");
       }}
     >
-      <h2 className="text-6xl font-extrabold">Create A New Potluck</h2>
+      <h2 className="text-6xl font-extrabold text-center">Create A New Potluck</h2>
       <input className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg px-4 py-4 my-3 block w-4/5 appearance-none leading-normal"
         name="event_name"
         type="text"
@@ -52,7 +52,7 @@ const AddPotluckForm = props => {
         placeholder="Event Name"
         aria-label="event name"
       />
-      <h3>Potluck Date and Time</h3>
+      <h3>Date and Time:</h3>
         <div className='flex space-x-6'>
           <input className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg px-4 py-4 my-3 block .w-3/4 appearance-none leading-normal"
             name="date"
@@ -72,7 +72,7 @@ const AddPotluckForm = props => {
             aria-label='event time'
           />
         </div>
-      <h3>Potluck Location</h3>
+      <h3>Location:</h3>
       <input className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg px-4 py-4 my-3 block w-4/5 appearance-none leading-normal"
         name="address"
         type="text"
@@ -109,7 +109,7 @@ const AddPotluckForm = props => {
         placeholder="Description"
         aria-label = 'event description'
       />
-      <button className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg px-4 py-4 my-3 block w-4/5 appearance-none leading-normal"
+      <button className="hover:bg-apricot text-xl bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg px-4 py-4 my-3 block w-4/5 appearance-none leading-normal"
       type="submit" aria-label='create event'>Submit</button>
     </form>
   );
