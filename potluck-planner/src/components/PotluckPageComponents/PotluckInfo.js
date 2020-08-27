@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import { Icon } from 'semantic-ui-react';
+import tablepic from '..//../img/spencer-davis-vJsj-hgOEG0-unsplash.jpg'
 
 
 const PotluckInfo = ({ event }) => {
@@ -28,10 +29,11 @@ const PotluckInfo = ({ event }) => {
                     {event.data.state}
                 </div>
             </div>
-            <div className="text-xl text-center mx-4">
+            <div className="text-xl text-center mx-4 mb-6">
                 <Icon name='newspaper outline' />
                 {event.data.description}
             </div>
+            <img src={tablepic} className='w-2/3 mb-6'/>
         </div>
     );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import moment from 'moment';
+import icon from '../../img/noun_enlarge_1042354.png'
 
 import { useStateValue, useLocalStorage } from '../../hooks';
 
@@ -27,7 +28,7 @@ const PotluckDetail= ({ event, match, organizers }) => {
     const eventTime = moment(time, 'HH:mm:ss a').format('LT');
 
     return (
-        <div className="bg-apricot w-56 h-48 text-center px-4">
+        <div className="bg-apricot w-56 h-48 text-center px-4 flex-col">
             <NavLink to={`${url}/event/${event_id}`}>
                 <h2 className="text-2xl font-extrabold">{event_name}</h2>
             </NavLink>
