@@ -6,7 +6,7 @@ export default function Header() {
     return (
         <div>
           <header className="flex items-center">
-            <img src={icon} className="w-10" />
+            <img src={icon} className="w-10 ml-8" />
             <h1 className="my-4 mx-4 text-4xl font-semibold text-white leading-tight wx-">Potluck Planner</h1>
             
           </header>

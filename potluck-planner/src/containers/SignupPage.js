@@ -31,10 +31,6 @@ const SignUpPage = () => {
                     </div>
                 )}
             </div>
-            <div className='image sign_up_inner'>
-                {/* <img src={landinghero} alt='Family Fun Meal!' /> */}
-                <NavLink to='/'>I am a member</NavLink>
-            </div>
         </div>
     );
 };
