@@ -4,7 +4,7 @@ import moment from 'moment';
 
 import { useStateValue, useLocalStorage } from '../../hooks';
 
-import { HostButtons, GuestButtons } from './Buttons';
+// import { HostButtons, GuestButtons } from './Buttons';
 
 const PotluckDetail= ({ event, match, organizers }) => {
     const {
@@ -28,24 +28,10 @@ const PotluckDetail= ({ event, match, organizers }) => {
 
     return (
         <div>
-            <div>
-                <NavLink to={`${url}/event/${event_id}`}>
-                    <h2 className="text-2xl font-extrabold">{event_name}</h2>
-                </NavLink>
-                <button className="bg-gray-400">
-                    {isHost ? (
-                        <HostButtons event={event} dispatch={dispatch} />
-                    ) : (
-                        <GuestButtons
-                            event={event}
-                            dispatch={dispatch}
-                            user_id={user_id}
-                        />
-                    )}
-                </button>
-            </div>
+            <NavLink to={`${url}/event/${event_id}`}>
+                <h2 className="text-2xl font-extrabold">{event_name}</h2>
+            </NavLink>
             <div className='text-center'>
-                <div>
                     <div className=''>
                         <span className='card-field'>Organizer: </span>
                         {eventOrganizer && eventOrganizer.full_name}
@@ -53,15 +39,12 @@ const PotluckDetail= ({ event, match, organizers }) => {
                     <div className='card-location'>
                         {city}, {state}
                     </div>
-                </div>
-                <div>
                     <div className='card-date'>
                         {moment(date).format('LL')}
                     </div>
                     <div className='card-time'>
                         {eventTime}
                     </div>
-                </div>
             </div>
         </div>
     );

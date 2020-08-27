@@ -1,11 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import icon from '../img/noun_Gathering Point_1044405.png'
 
 export default function Header() {
     return (
         <div>
           <header className="flex items-center">
+            <img src={icon} className="w-10" />
             <h1 className="my-4 mx-4 text-4xl font-semibold text-white leading-tight wx-">Potluck Planner</h1>
+            
           </header>
           <div className="container ml-4 pb-5">
             <div className=" sm:block">
