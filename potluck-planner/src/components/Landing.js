@@ -20,8 +20,8 @@ function Landing() {
           <p className="mt-2 text-gray-600 sm:text-xl sm:mt-4"> In the world of social gatherings and potlucks the "Potluck Planner" is king. If you have ever tried to organize a potluck through text messages, online to-do lists or spreadsheets, you'll understand why this app is essential. 
 </p>
           <div className="mt-4 sm:mt-6">
-          <a href="/" className="btn btn-blue sm:text-base shadow-lg mr-6">Plan A Potluck</a>
-          <a href="/" className="btn btn-gray sm:text-base">Learn More</a>
+          <a href="/" className="btn bg-apricot sm:text-base shadow-lg mr-6">Plan A Potluck</a>
+          <a href="/" className="btn bg-aqua sm:text-base">Learn More</a>
         </div>
         </div>
         </div>

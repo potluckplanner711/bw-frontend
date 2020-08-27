@@ -1,36 +1,27 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom';
+import { PrivateRoute } from './utils/PrivateRoute';
 
-//Imported Components
-import { PrivateRoute } from './components/PrivateRoute'
-import Navbar from './components/Navbar'
+import SignupPage from './containers/SignupPage';
 import Landing from './components/Landing';
-import Login from './components/Login';
-import SignUp from './components/SignUp';
-import Dashboard from './components/Dashboard';
-
-
-//Redux Imports
-// import { Provider } from 'react-redux';
-// import store from './store'
-
+import LoginPage from './containers/LoginPage';
+import Dashboard from './containers/Dashboard';
+import Navbar from './components/Navbar';
 
 function App() {
-  return ( 
-    <Router>
-      <div className="App">
-      <div className="bg-gray-300">
-        <Navbar />
-        <Route exact path='/' component={Landing} />
-        <Route exact path='/login' component={Login} />
-        <Route exact path='/signup' component={SignUp} />
-        <PrivateRoute exact path='/dashboard'>
-          <Dashboard/>
-        </PrivateRoute>
-      </div>
-      </div>
-    </Router>
-  );
+    return (
+        <div>
+            <Navbar />
+            <Route path='/' exact component={Landing} />
+            <Route path='/login' component={LoginPage} />
+            <Route path='/signup' component={SignupPage} />
+            <PrivateRoute
+                path='/dashboard'
+                component={Dashboard}
+                redirectURL='/login'
+            />
+        </div>
+    );
 }
 
 export default App;
