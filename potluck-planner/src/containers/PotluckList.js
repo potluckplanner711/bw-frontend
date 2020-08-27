@@ -56,7 +56,7 @@ const PotluckList = () => {
                     
                     {data.length > 0 &&
                         eventsToMap.map(event => (
-                        <div class="flex items-start max-w-sm rounded overflow-hidden shadow-lg p-3 m-3">
+                        <div className="flex items-start max-w-sm rounded overflow-hidden shadow-lg p-3 m-3">
                             <PotluckDetail
                                 event={event}
                                 key={event.event_id}
