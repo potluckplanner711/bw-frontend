@@ -44,24 +44,22 @@ const PotluckDetail= ({ event, match, organizers }) => {
                     )}
                 </button>
             </div>
-            <div>
+            <div className='text-center'>
                 <div>
-                    <div className='card-organizer'>
-                        <span className='card-field'>Organized By: </span>
+                    <div className=''>
+                        <span className='card-field'>Organizer: </span>
                         {eventOrganizer && eventOrganizer.full_name}
                     </div>
                     <div className='card-location'>
-                        <span className='card-field'>Location: </span>
                         {city}, {state}
                     </div>
                 </div>
                 <div>
                     <div className='card-date'>
-                        <span className='card-field'>Date:</span>
                         {moment(date).format('LL')}
                     </div>
                     <div className='card-time'>
-                        <span className='card-field'>Time: </span> {eventTime}
+                        {eventTime}
                     </div>
                 </div>
             </div>
