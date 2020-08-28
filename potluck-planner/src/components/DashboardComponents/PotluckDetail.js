@@ -1,10 +1,11 @@
 import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import moment from 'moment';
+import icon from '../../img/noun_enlarge_1042354.png'
 
 import { useStateValue, useLocalStorage } from '../../hooks';
 
-import { HostButtons, GuestButtons } from './Buttons';
+// import { HostButtons, GuestButtons } from './Buttons';
 
 const PotluckDetail= ({ event, match, organizers }) => {
     const {
@@ -27,43 +28,24 @@ const PotluckDetail= ({ event, match, organizers }) => {
     const eventTime = moment(time, 'HH:mm:ss a').format('LT');
 
     return (
-        <div>
-            <div>
-                <NavLink to={`${url}/event/${event_id}`}>
-                    <h2 className="text-2xl font-extrabold">{event_name}</h2>
-                </NavLink>
-                <button className="bg-gray-400">
-                    {isHost ? (
-                        <HostButtons event={event} dispatch={dispatch} />
-                    ) : (
-                        <GuestButtons
-                            event={event}
-                            dispatch={dispatch}
-                            user_id={user_id}
-                        />
-                    )}
-                </button>
-            </div>
-            <div>
-                <div>
-                    <div className='card-organizer'>
-                        <span className='card-field'>Organized By: </span>
+        <div className="bg-apricot w-56 h-48 text-center px-4 flex-col">
+            <NavLink to={`${url}/event/${event_id}`}>
+                <h2 className="text-2xl font-extrabold">{event_name}</h2>
+            </NavLink>
+            <div className='text-center'>
+                    <div className=''>
+                        <span className=''>Organizer: </span>
                         {eventOrganizer && eventOrganizer.full_name}
                     </div>
-                    <div className='card-location'>
-                        <span className='card-field'>Location: </span>
+                    <div className=''>
                         {city}, {state}
                     </div>
-                </div>
-                <div>
-                    <div className='card-date'>
-                        <span className='card-field'>Date:</span>
+                    <div className=''>
                         {moment(date).format('LL')}
                     </div>
-                    <div className='card-time'>
-                        <span className='card-field'>Time: </span> {eventTime}
+                    <div className=''>
+                        {eventTime}
                     </div>
-                </div>
             </div>
         </div>
     );
