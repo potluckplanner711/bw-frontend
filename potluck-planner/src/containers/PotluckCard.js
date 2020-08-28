@@ -34,23 +34,25 @@ const PotluckCard = ({ match, history }) => {
                         history={history}
                     />
                 )}
-            <div className="flex flex-row space-x-12 space-y-8">
-                <div className="w-1/2 flex-col">
-                    <GuestsContainer
-                        guests={event.data.guests}
-                        organizer={event.data.organizer_id}
-                        eventID={event.data.event_id}
-                    />
-                    {isHost && <GuestsSearch eventID={eventID} />}
+            <div className="flex flex-row w-10/12 justify-around">
+                <div className='w-2/5 rounded'>
+                    <div className=''>
+                        <GuestsContainer
+                            guests={event.data.guests}
+                            organizer={event.data.organizer_id}
+                            eventID={event.data.event_id}
+                        />
+                    </div>
+                    <div>
+                        {isHost && <GuestsSearch eventID={eventID} />}
+                    </div>
                 </div>
-                <div className="w-1/2">
-                    <ItemsContainer
-                        recipes={event.data.recipes}
-                        user_id={user_id}
-                        eventID={event.data.event_id}
-                        isHost={isHost}
-                    />
-                </div>
+                <ItemsContainer
+                    recipes={event.data.recipes}
+                    user_id={user_id}
+                    eventID={event.data.event_id}
+                    isHost={isHost}
+                />
             </div>
         </div>
     );

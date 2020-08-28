@@ -12,7 +12,7 @@ const ItemList = ({ recipe, user_id, eventID }) => {
         <div className="flex flex-col-reverse space-x-4 items-center">
             <div>
             <button
-                className="bg-orange text-xs shadow-lg p-3 m-3"
+                className="bg-aqua rounded text-xs shadow-sm p-3 m-3"
                 name={recipe.full_name ? 'times' : 'check'}
                 aria-label={recipe.full_name ? 'unclaim' : 'claim'}
                 onClick={() =>
@@ -22,10 +22,10 @@ const ItemList = ({ recipe, user_id, eventID }) => {
                     })
                 }
             >
-            Claim
+                Claim
             </button>
             <button
-                className="bg-orange text-xs shadow-lg p-3 m-3"
+                className="bg-aqua rounded text-xs shadow-sm p-3 m-3"
                 name='trash alternate'
                 size='small'
                 onClick={() => {

@@ -18,7 +18,7 @@ const ItemsContainer = ({ recipes, user_id, eventID, isHost }) => {
     };
 
     return (
-        <div className="bg-apricot p-4 flex flex-col items-center">
+        <div className="bg-apricot w-2/5 p-4 flex flex-col rounded items-center mb-10">
             <h3 className="text-1xl font-extrabold">Choose a dish</h3>
             {typeof recipes === 'object' &&
                 recipes.map(recipe => (
@@ -30,7 +30,7 @@ const ItemsContainer = ({ recipes, user_id, eventID, isHost }) => {
                     />
                 ))}
             {isHost && (
-                <form onSubmit={e => addNewRecipe(e)} aria-label="add recipe">
+                <form onSubmit={e => addNewRecipe(e)} aria-label="add recipe" className="flex flex-col items-center">
                     <input
                         className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
                         type='text'
@@ -41,7 +41,7 @@ const ItemsContainer = ({ recipes, user_id, eventID, isHost }) => {
                             setRecipe({ recipe_name: e.target.value })
                         }
                     />
-                    <button class="bg-orange p-3" onSubmit={e => addNewRecipe(e)} aria-label='add dish button'>Add Dish</button>
+                    <button class="bg-aqua rounded text-lg shadow-sm p-3 m-3" onSubmit={e => addNewRecipe(e)} aria-label='add dish button'>Add Dish</button>
                 </form>
             )}
         </div>

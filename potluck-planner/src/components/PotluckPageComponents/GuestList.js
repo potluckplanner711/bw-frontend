@@ -10,9 +10,6 @@ const GuestList = ({ guest, organizer, eventID }) => {
 
     return (
         <div className="flex flex-col-reverse space-x-4 items-center">
-            <div>
-        
-            </div>
             <h2 className="text-md">{`${guest.full_name} - ${response}`}</h2>
             {guest.user_id !== organizer && (
                 <Icon
